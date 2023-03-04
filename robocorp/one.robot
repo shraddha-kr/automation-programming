@@ -7,16 +7,15 @@ Library    OperatingSystem
 Library    ExcelLibrary
 Library    ./excelhandling.py
 Library    String
+
 *** Variables ***
 ${URL}       https://robotsparebinindustries.com/
 ${URI}       https://robotsparebinindustries.com/SalesData.xlsx 
 ${EXCELFILE}     ${EXECDIR}/robocorp/SalesData.xlsx
-@{one}    [[Shraddha]    [Kharangate]    [12345]]    [[Rishabh]    [Kharangate]    [67891]]    [[Rohan]    [Kharangate]    [112342]]
-@{two}    one    two    three
+
 *** Keywords ***
 Open the intranet website
     Open Browser    ${URL} 
-
 
 Log In
     Input Text    username    maria
