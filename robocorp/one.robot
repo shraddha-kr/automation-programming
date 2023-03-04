@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Template robot main suite
 
-Library    Selenium2Library    
+Library    Selenium2Library
 Library    RequestsLibrary
 Library    OperatingSystem
 Library    ExcelLibrary
@@ -61,6 +61,9 @@ Fill and submit the form for one person
         Click Button    Submit        
     END
 
+Collect the results
+    Capture Element Screenshot    css:div.sales-summary    sales_summary.png
+
 
 *** Test Cases ***  
 Open the website
@@ -68,4 +71,4 @@ Open the website
     Log In
     Download the Excel file
     Fill Sales Form using the data from the Excel file
-    
+    Collect the results
