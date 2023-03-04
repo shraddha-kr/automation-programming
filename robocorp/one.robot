@@ -64,6 +64,9 @@ Fill and submit the form for one person
 Collect the results
     Capture Element Screenshot    css:div.sales-summary    sales_summary.png
 
+Log out and close the browser
+    Click Button    Log out
+    Close Browser
 
 *** Test Cases ***  
 Open the website
@@ -72,3 +75,4 @@ Open the website
     Download the Excel file
     Fill Sales Form using the data from the Excel file
     Collect the results
+    [Teardown]    Log out and close the browser
