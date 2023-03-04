@@ -6,12 +6,13 @@ Library    RequestsLibrary
 Library    OperatingSystem
 Library    ExcelLibrary
 Library    ./excelhandling.py
-
+Library    String
 *** Variables ***
 ${URL}       https://robotsparebinindustries.com/
 ${URI}       https://robotsparebinindustries.com/SalesData.xlsx 
 ${EXCELFILE}     ${EXECDIR}/robocorp/SalesData.xlsx
-
+@{one}    [[Shraddha]    [Kharangate]    [12345]]    [[Rishabh]    [Kharangate]    [67891]]    [[Rohan]    [Kharangate]    [112342]]
+@{two}    one    two    three
 *** Keywords ***
 Open the intranet website
     Open Browser    ${URL} 
@@ -52,20 +53,14 @@ Use excel handling
 
 Fill and submit the form for one person
     [Arguments]    ${sales_rep}
-    FOR     ${one_rep}    IN     ${sales_rep}
-        Log     ${one_rep}        
-        FOR    ${index}    ${item}    IN ENUMERATE  ${one_rep}
-            # Log     First Name at index ${index} is ${item[0][0]}
-            # Log     Last Name at index ${index} is ${item[${index}][1]}
-            # Log     Sales at index ${index} is ${item[${index}][2]}
-            # Log     Sales Target at index ${index} is ${item[${index}][3]}           
-            Input Text    firstname    ${item[${index}][0]}        
-            Input Text    lastname    ${item[${index}][1]}
-            Input Text    salesresult  ${item[${index}][2]}  
-            Select From List By Value    salestarget    ${item[${index}][3]}
-            Click Button    Submit
-        END
+    FOR     ${in}    ${one_rep}    IN ENUMERATE    @{sales_rep}                                                  
+        Input Text    firstname    ${one_rep}[0]       
+        Input Text    lastname    ${one_rep}[1]
+        Input Text    salesresult  ${one_rep}[2]  
+        Select From List By Value    salestarget    ${one_rep}[3]
+        Click Button    Submit        
     END
+
 
 *** Test Cases ***  
 Open the website
@@ -73,3 +68,4 @@ Open the website
     Log In
     Download the Excel file
     Fill Sales Form using the data from the Excel file
+    
