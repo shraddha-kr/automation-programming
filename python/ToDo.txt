@@ -1,0 +1,4 @@
+? reverse string
+? without last char
+? with
+? enumerate
