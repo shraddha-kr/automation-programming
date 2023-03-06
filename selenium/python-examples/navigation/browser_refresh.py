@@ -6,6 +6,7 @@ service = Service(executable_path="./chromedriver")
 with webdriver.Chrome(service=service) as driver:
     driver.get("https://pythonexamples.org/")
     driver.refresh()
+    driver.forward()
     driver.close()
 
 
