@@ -1,3 +1,4 @@
+# https://www.lambdatest.com/blog/how-to-handle-web-table-in-selenium-webdriver/
 import unittest
 import time
 from selenium import webdriver
@@ -7,7 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
  
 test_url = "https://www.w3schools.com/html/html_tables.asp"
- 
+mphasis_test_url = "https://datatables.net/extensions/select/examples/initialisation/checkbox.html"
+
 class WebTableTest(unittest.TestCase):
  
     def setUp(self):
@@ -18,10 +20,19 @@ class WebTableTest(unittest.TestCase):
         driver = self.driver
         driver.get(test_url)
         
-        WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CLASS_NAME, "w3-example")))       
+        WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CLASS_NAME, "w3-example")))
+ 
         num_rows = len (driver.find_elements_by_xpath("//*[@id='customers']/tbody/tr"))
         print("Rows in table are " + repr(num_rows))
- 
+        """ Mphasis :: Select first row of a web table, where the row value will random evertime
+        driver.get(mphasis_test_url)
+        WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "example")))
+        m_row_data = len (driver.find_elements_by_xpath("//*[@id='example']/tbody/tr"))
+        print("Rows in table are " + repr(m_row_data))        
+        
+        driver.find_element_by_xpath("//*[@id='example']/tbody/tr/td[1]").click()   
+        driver.save_screenshot("./webtable-checkbox-select.png")  """
+        
     def test_2_get_num_cols_(self):
         driver = self.driver
         driver.get(test_url)
