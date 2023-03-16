@@ -1,4 +1,3 @@
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,8 +18,13 @@ public class select_dropdown {
             WebElement mElement = driver.findElement(By.name("dropdown"));
             Select dd = new Select(mElement);
             dd.selectByVisibleText("Automation Testing");
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
+            //selectByIndex
+		    dd.selectByIndex(2); // value is QTP
+            //selectByValue
+		    dd.selectByValue("ddmanual"); // value is Manual Testing
+            //deselect
+            dd.deselectByVisibleText("Performance Testing");
+        } catch (InterruptedException e) {            
             e.printStackTrace();
             e.getMessage();
         }
