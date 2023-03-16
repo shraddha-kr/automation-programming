@@ -9,5 +9,10 @@
         "selenium-java/selenium-java-3.141.59/libs/okhttp-3.11.0.jar",
         "selenium-java/selenium-java-3.141.59/libs/okio-1.14.0.jar",
         "selenium-java/htmlunit-driver-4.8.0-jar-with-dependencies.jar"
-    ]
+    ],
+    "python.testing.pytestArgs": [
+        "py-test"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
