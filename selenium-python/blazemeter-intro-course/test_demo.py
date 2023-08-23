@@ -26,5 +26,10 @@ def test_login(driver):
     driver.find_element(By.ID, 'password').send_keys('Demo123!')
     # click sign-in button
     driver.find_element(By.ID, 'submit').click()
-
     assert 'home'in driver.current_url
+
+def test_verify_version(driver):
+    # click on about link button
+    driver.find_element(By.ID, 'aboutLink').click()
+    # verify version within the popup dialog
+    assert '2.1.0.11' in driver.find_element(By.CLASS_NAME, 'modal-body').text
