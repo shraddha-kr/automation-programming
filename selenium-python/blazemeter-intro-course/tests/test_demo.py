@@ -3,6 +3,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+from support.common import get_element_text, get_element
+
 @pytest.fixture(scope="module")
 def driver():
     driver = webdriver.Chrome()
@@ -12,8 +14,8 @@ def driver():
     driver.close()
     driver.quit()
 
-def test_open_url(driver):    
-    driver.get("https://google.com")
+# def test_open_url(driver):    
+#     driver.get("https://google.com")
     
 def test_verify_title(driver):        
     driver.get("http://dbankdemo.com/bank/login")
@@ -30,6 +32,10 @@ def test_login(driver):
 
 def test_verify_version(driver):
     # click on about link button
-    driver.find_element(By.ID, 'aboutLink').click()
+    # driver.find_element(By.ID, 'aboutLink').click()    
     # verify version within the popup dialog
-    assert '2.1.0.11' in driver.find_element(By.CLASS_NAME, 'modal-body').text
+    # assert '2.1.0.11' in driver.find_element(By.CLASS_NAME, 'modal-body').text
+
+    get_element(driver, (By.ID, 'aboutLink')).click()
+    assert '2.1.0.11' in get_element_text(driver, (By.CLASS_NAME, 'modal-body'))
+
