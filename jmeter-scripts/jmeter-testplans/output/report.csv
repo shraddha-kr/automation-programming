@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1681466001185,1094,ContactPage,200,OK,Master Thread Group 1-4,text,true,,78464,127,7,7,http://lifecharger.eu//contact/,829,0,670
+1681466001782,556,ContactPage,200,OK,Master Thread Group 1-10,text,true,,78464,127,6,6,http://lifecharger.eu//contact/,277,0,135
+1681466001129,2556,AboutPage,200,OK,Master Thread Group 1-2,text,true,,141759,125,5,5,https://lifecharger.eu//about/,2113,0,1960
+1681466001129,2558,HomePage,200,OK,Master Thread Group 1-3,text,true,,185953,119,5,5,https://lifecharger.eu//,2107,0,1960
+1681466001683,2019,AboutPage,200,OK,Master Thread Group 1-9,text,true,,141759,125,4,4,https://lifecharger.eu//about/,1571,0,1418
+1681466001583,2175,HomePage,200,OK,Master Thread Group 1-8,text,true,,185953,119,3,3,https://lifecharger.eu//,1676,0,1520
+1681466001386,2441,AboutPage,200,OK,Master Thread Group 1-6,text,true,,141759,125,3,3,https://lifecharger.eu//about/,1917,0,1740
+1681466003687,560,ContactPage,200,OK,Master Thread Group 1-2,text,true,,78464,127,3,3,http://lifecharger.eu//contact/,279,0,135
+1681466003760,558,ContactPage,200,OK,Master Thread Group 1-8,text,true,,78464,127,2,2,http://lifecharger.eu//contact/,275,0,133
+1681466003829,553,ContactPage,200,OK,Master Thread Group 1-6,text,true,,78464,127,1,1,http://lifecharger.eu//contact/,277,0,136
